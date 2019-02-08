@@ -10,7 +10,7 @@ class UserController extends Controller
     // login request
     public function login(Request $request)
     {
-        echo "hello";
+        return view('content.home');
         
     }
 
