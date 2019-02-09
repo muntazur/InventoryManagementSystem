@@ -30,15 +30,12 @@
 
                 <ul class="navbar-nav">
 
-                    <!-- Home & Logout in Navbar -->
-                      <li class="nav-item active">
-                        <a class="nav-link" href="index.php"><i class="fa fa-home">&nbsp;</i>Home <span class="sr-only">(current)</span></a>
-                      </li>
+                    <!Home & Logout in Navbar >
                       
                       <li class="nav-item active">
-                        <a class="nav-link" href="logout.php"><i class="fa fa-user">&nbsp;</i>Logout</a>
+                        <a class="nav-link" href="logout"><i class="fa fa-user">&nbsp;</i>Logout</a>
                       </li>
-                    <!-- Home & Logout completed -->
+                    <! Home & Logout completed >
                             
                 </ul>
 
@@ -50,8 +47,11 @@
     
 <br/><br/>
 
-   @yield('content')
-   @yield('inventory')
+   @yield('admin_and_New_order_panel')
+   @yield('category_brand_product')
+   @yield('add_category')
+   @yield('add_brand')
+   @yield('add_product')
 
 
 </body>

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','UserController@home');
 
 Route::post('login',
  [
@@ -28,5 +26,14 @@ Route::post('register',
      
  ]
 );
+
+Route::post('/brand',
+ [  
+ 	'as' => 'brand',
+	'uses' => 'InventoryController@storeBrand'
+ ]
+);
+
+Route::get('logout','UserController@logout');
 
 

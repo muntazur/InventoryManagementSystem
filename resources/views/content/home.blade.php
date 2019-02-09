@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('content')
+@section('admin_and_New_order_panel')
 
 <div class="container">
 
@@ -61,7 +61,6 @@
 
                                     <div class="card-body">
                                         <h4 class="card-title">New Orders</h4>
-                                        <p class="card-text">Here you can make invoices and create new orders</p>
                                         <a href="new_order.php" class="btn btn-primary">New Orders</a>
                                     </div>
 
@@ -91,7 +90,7 @@
 	
 @endsection
 
-@section('inventory')
+@section('category_brand_product')
 
 <div class="container">
 
@@ -105,7 +104,6 @@
 
         						    <div class="card-body">
         						        <h4 class="card-title">Categories</h4>
-        						        <p class="card-text">Here you can manage your categories and you add new parent and sub categories</p>
         						        <a href="#" data-toggle="modal" data-target="#form_category" class="btn btn-primary">Add</a>
         						        <a href="manage_categories.php" class="btn btn-primary">Manage</a>
         					      </div>
@@ -128,7 +126,6 @@
     						    <div class="card-body">
 
     						        <h4 class="card-title">Brands</h4>
-    						        <p class="card-text">Here you can manage your brand and you add new brand</p>
     						        <a href="#" data-toggle="modal" data-target="#form_brand" class="btn btn-primary">Add</a>
     						        <a href="manage_brand.php" class="btn btn-primary">Manage</a>
 
@@ -150,7 +147,6 @@
 						        <div class="card-body">
 
 						            <h4 class="card-title">Products</h4>
-						            <p class="card-text">Here you can manage your prpducts and you add new products</p>
 						            <a href="#" data-toggle="modal" data-target="#form_products" class="btn btn-primary">Add</a>
 						            <a href="manage_product.php" class="btn btn-primary">Manage</a>
 
@@ -166,126 +162,207 @@
 
 </div>
 
- @endsection
+@endsection
 
 
 
 
- @section('modals')
+@section('add_category')
 
 
-  <!-- Modal -->
+<!-- Modal -->
 <div class="modal fade" id="form_category" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="category_form" onsubmit="return false">
-          <div class="form-group">
-            <label>Category Name</label>
-            <input type="text" class="form-control" name="category_name" id="category_name" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="cat_error" class="form-text text-muted"></small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Parent Category</label>
-            <select class="form-control" id="parent_cat" name="parent_cat">
-              
 
-              
-            </select>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form id="category_form" onsubmit="return false">
+
+                    <div class="form-group">
+
+                        <label>Category Name</label>
+                        <input type="text" class="form-control" name="category_name" id="category_name" aria-describedby="emailHelp" placeholder="Enter category name">
+                        <small id="cat_error" class="form-text text-muted"></small>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="exampleInputPassword1">Parent Category</label>
+                        <select class="form-control" id="parent_cat" name="parent_cat">
+                
+
+                
+                        </select>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</div>   <!-- Modal -->
+
+</div>   
+
+@endsection
+
+@section('add_brand')
+
+<!-- Modal -->
 <div class="modal fade" id="form_brand" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add New Brand</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="brand_form" onsubmit="return false">
-          <div class="form-group">
-            <label>Brand Name</label>
-            <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand Name">
-            <small id="brand_error" class="form-text text-muted"></small>
-          </div>
-          <button type="submit" class="btn btn-primary">Add</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add New Brand</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+
+                <form method="post" id="brand_form" action="/brand">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+
+                        <label>Brand Name</label>
+                        <input type="text" class="form-control" name="brand_name" id="brand_name" placeholder="Enter Brand Name">
+                        <small id="brand_error" class="form-text text-muted"></small>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add</button>
+
+                </form>
+
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+
     </div>
-  </div>
-</div>   <!-- Modal -->
+
+</div>  
+
+@endsection
+
+
+@section('add_product')
+ <!-- Modal -->
 <div class="modal fade" id="form_products" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add new products</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="product_form" onsubmit="return false">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label>Date</label>
-              <input type="text" class="form-control" name="added_date" id="added_date" value="2019-02-07" readonly/>
-            </div>
-            <div class="form-group col-md-6">
-              <label>Product Name</label>
-              <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Enter Product Name" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Category</label>
-            <select class="form-control" id="select_cat" name="select_cat" required/>
-              
 
-              
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Brand</label>
-            <select class="form-control" id="select_brand" name="select_brand" required/>
-              
+    <div class="modal-dialog" role="document">
 
-              
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Product Price</label>
-            <input type="text" class="form-control" id="product_price" name="product_price" placeholder="Enter Price of Product" required/>
-          </div>
-          <div class="form-group">
-            <label>Quantity</label>
-            <input type="text" class="form-control" id="product_qty" name="product_qty" placeholder="Enter Quantity" required/>
-          </div>
-          <button type="submit" class="btn btn-success">Add Product</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel">Add new products</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form id="product_form" onsubmit="return false">
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+
+                            <label>Date</label>
+                            <input type="text" class="form-control" name="added_date" id="added_date" value="2019-02-07" readonly/>
+
+                        </div>
+
+                        <div class="form-group col-md-6">
+
+                            <label>Product Name</label>
+                            <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Enter Product Name" required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Category</label>
+                        <select class="form-control" id="select_cat" name="select_cat" required/>
+                          
+
+                          
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Brand</label>
+                        <select class="form-control" id="select_brand" name="select_brand" required/>
+                          
+
+                          
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Product Price</label>
+                        <input type="text" class="form-control" id="product_price" name="product_price" placeholder="Enter Price of Product" required/>
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Quantity</label>
+                        <input type="text" class="form-control" id="product_qty" name="product_qty" placeholder="Enter Quantity" required/>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Add Product</button>
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+
     </div>
-  </div>
+    
  </div>
 
  @endsection
