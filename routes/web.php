@@ -34,6 +34,23 @@ Route::post('/brand',
  ]
 );
 
+Route::post('/category',
+  
+  [
+      'as' => 'category',
+      'uses'=>'InventoryController@storeCategory'
+  ]
+
+);
+
+Route::post('/product',
+
+	[
+		'as' => 'product',
+		'uses'=> 'InventoryController@storeProduct'
+	]
+);
+
 Route::get('logout','UserController@logout');
 
 

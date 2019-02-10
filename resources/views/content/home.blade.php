@@ -188,7 +188,9 @@
 
             <div class="modal-body">
 
-                <form id="category_form" onsubmit="return false">
+                <form action="/category" method="post" id="category_form">
+
+                    {{ csrf_field() }}
 
                     <div class="form-group">
 
@@ -202,8 +204,30 @@
 
                         <label for="exampleInputPassword1">Parent Category</label>
                         <select class="form-control" id="parent_cat" name="parent_cat">
-                
+                              
+                              <?php 
 
+                                  use App\Http\Controllers\InventoryController;
+                                  $categories = InventoryController::categoryName();
+                                  ?>
+
+                                    <option value="">None</option>
+
+                                  <?php
+
+                                  foreach($categories as $category){
+                                        
+                                        ?>
+                                            <option value = "{{$category->name}}">
+
+                                                {{$category->name}}
+
+                                            </option>
+
+                                        <?php
+                                  }
+                              ?>
+                              
                 
                         </select>
 
@@ -292,8 +316,9 @@
 
             <div class="modal-body">
 
-                <form id="product_form" onsubmit="return false">
-
+                <form method="post" action="/product" id="product_form">
+                    
+                    {{ csrf_field() }}
                     <div class="form-row">
 
                         <div class="form-group col-md-6">
@@ -315,7 +340,24 @@
                     <div class="form-group">
 
                         <label>Category</label>
-                        <select class="form-control" id="select_cat" name="select_cat" required/>
+                        <select class="form-control" id="select_cat" name="category_name" required/>
+
+                                    <option value="">None</option>
+
+                                  <?php
+
+                                  foreach($categories as $category){
+                                        
+                                    ?>
+                                            <option value = "{{$category->name}}">
+
+                                                {{$category->name}}
+
+                                            </option>
+
+                                        <?php
+                                  }
+                              ?>
                           
 
                           
@@ -326,9 +368,31 @@
                     <div class="form-group">
 
                         <label>Brand</label>
-                        <select class="form-control" id="select_brand" name="select_brand" required/>
+                        <select class="form-control" id="select_brand" name="brand_name" required/>
                           
 
+                              <?php 
+
+                                  //use App\Http\Controllers\InventoryController;
+                                  $brands = InventoryController::brandName();
+                                  ?>
+
+                                    <option value="">None</option>
+
+                                  <?php
+
+                                  foreach($brands as $brand){
+                                        
+                                        ?>
+                                            <option value = "{{$brand->name}}">
+
+                                                {{$brand->name}}
+
+                                            </option>
+
+                                        <?php
+                                  }
+                              ?>
                           
                         </select>
 
@@ -343,7 +407,7 @@
                     <div class="form-group">
 
                         <label>Quantity</label>
-                        <input type="text" class="form-control" id="product_qty" name="product_qty" placeholder="Enter Quantity" required/>
+                        <input type="text" class="form-control" id="product_qty" name="product_quantity" placeholder="Enter Quantity" required/>
 
                     </div>
 
