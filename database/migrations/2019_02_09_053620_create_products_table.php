@@ -21,12 +21,12 @@ class CreateProductsTable extends Migration
             $table->integer('cid')->unsigned();
             $table->integer('bid')->unsigned();
 
-            $table->foreign('cid')->references('cid')->on('categories');
-            $table->foreign('bid')->references('bid')->on('brands');
+            $table->foreign('cid')->references('cid')->on('categories')->onDelete('cascade');
+            $table->foreign('bid')->references('bid')->on('brands')->onDelete('cascade');
 
 
             $table->double('price');
-            $table->integer('quantity');
+            $table->integer('quantity')->nullable();
             $table->enum('status',['0','1']);
             
             $table->timestamps();

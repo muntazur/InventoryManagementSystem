@@ -51,6 +51,36 @@ Route::post('/product',
 	]
 );
 
+// managing route
+
+Route::get('/manage_brand',
+
+  [
+      'as' => 'manage',
+      'uses' => 'ManagementController@manageBrand'
+  ]
+
+);
+
+Route::get('/manage_category',
+
+  [
+      'as' => 'manage',
+      'uses' => 'ManagementController@manageCategory'
+  ]
+
+);
+
+Route::get('/manage_product',
+
+  [
+      'as' => 'manage',
+      'uses' => 'ManagementController@manageProduct'
+  ]
+
+);
+
+
 Route::get('logout','UserController@logout');
 
 

@@ -46,3 +46,8 @@ img{
     width: 80px;
     border-radius:50%
 }
+th,td
+{
+  text-align: center;
+}
+

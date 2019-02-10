@@ -30,6 +30,7 @@
 		</div>
 
 	</div>	
+	@yield('jquery');
 
 </body>
 </html>

@@ -105,7 +105,7 @@
         						    <div class="card-body">
         						        <h4 class="card-title">Categories</h4>
         						        <a href="#" data-toggle="modal" data-target="#form_category" class="btn btn-primary">Add</a>
-        						        <a href="manage_categories.php" class="btn btn-primary">Manage</a>
+        						        <a href="/manage_category" class="btn btn-primary">Manage</a>
         					      </div>
 
         				    </div>
@@ -127,7 +127,7 @@
 
     						        <h4 class="card-title">Brands</h4>
     						        <a href="#" data-toggle="modal" data-target="#form_brand" class="btn btn-primary">Add</a>
-    						        <a href="manage_brand.php" class="btn btn-primary">Manage</a>
+    						        <a href="/manage_brand" class="btn btn-primary">Manage</a>
 
     					      </div>
 
@@ -148,7 +148,7 @@
 
 						            <h4 class="card-title">Products</h4>
 						            <a href="#" data-toggle="modal" data-target="#form_products" class="btn btn-primary">Add</a>
-						            <a href="manage_product.php" class="btn btn-primary">Manage</a>
+						            <a href="/manage_product" class="btn btn-primary">Manage</a>
 
 					          </div>
 
